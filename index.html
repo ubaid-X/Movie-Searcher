@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/movie-searcher-favicon.png" type="image/x-icon" />
+    <!-- SEO meta tags -->
+    <meta name="description" content="Search and discover movies from around the world" />
+    <meta name="keywords" content="movie search, film database, movie discovery, movie finder, film search engine" />
+    <meta name="author" content="ubaidullah" />
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Movie Searcher" />
+    <meta property="og:description" content="Search and discover movies from around the world" />
+    <meta property="og:image" content="./assets/images/movie-searcher-preview.png" />
+    <meta property="og:url" content="" />
+    <title>Movie Searcher</title>
+    <link rel="stylesheet" href="./assets/css/style.css" class="css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
+               <!--! HEADER OF WEBPAGE -->
+    <header>
+
+          <!--! nav bar of header  -->
+      <nav class="header__nav">
+        <h1 class="header__h1">Cine<b>Search</b></h1>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+      
+        <!--! hero section of header  -->
+      <div class="header__herosection">
+        <p class="header__p1">🎬 MOVIE DATABASE</p>
+        <h3 class="header__h1">
+          <b>Find your next </b> <br />
+          favourite film
+        </h3>
+        <p class="header__p2">Search from millions of movies worldwide</p>
+        <div class="header__inputDiv">
+          <label for="header__input"></label>
+          <input
+            type="text"
+            placeholder="Search movies, directors"
+            id="header__input"
+          />
+          <button class="header__search">Search</button>
+        </div>
+      </div>
+    </header>
+ 
+               <!--! MAIN BODY OF WEBPAGE -->
+    <main>
+      <div class="main__showResult">
+        <p class="main__p1">RESULT</p>
+        <p class="main__p2"></p>
+      </div>
+
+      <div class="main__cards"></div>
+
+        <!--! Template of movie card -->
+      <template class="main__cardTemplate">
+        <div class="card">
+          <div class="main__poster">
+            <img src="" alt="" class="main__moviePoster" />
+          </div>
+          <div class="main__cardData">
+            <h1 class="main__h1"></h1>
+            <div class="main__cardExtraData">
+              <p class="movieDate"></p>
+              <h3 class="main__cardRating">★</h3>
+            </div>
+          </div>
+        </div>
+      </template>
+
+    </main>
+
+           <!--! FOOTER OF THE WEBPAGE -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__brand">Cine<b>Search</b></p>
+        <p class="footer__copy">
+          &copy; 2026 · Powered by
+          <a href="https://www.themoviedb.org/" target="_blank">TMDB</a>
+        </p>
+      </div>
+    </footer>
+    <div class="footer-2">
+      <p>
+        Made with <span class="heart">❤</span> by
+        <a href="https://github.com/ubaid-X" target="_blank">Ubaidullah</a>
+      </p>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
