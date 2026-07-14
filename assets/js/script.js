@@ -3,11 +3,12 @@ let searchBtn = document.querySelector('.header__search');
 let foundCount = document.querySelector('.main__p2');
 let mainCard = document.querySelector('.main__cards');
 let cardTemplate = document.querySelector('.main__cardTemplate')
-let API_KEY = 'a549bc18facd7e944be8fb5751bd5040';
 
-         //! main function to get data from local-storeage or API and print in organized way 
-async function getData(keyword, API_KEY) {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(keyword)}`;
+//! main function to get data from local-storeage or API and print in organized way 
+async function getData(keyword) {
+    // const url = `https://api.themoviedb.org/3/search/movie?api_keyYOUR_API_KEY=&query=${encodeURIComponent(keyword)}`;
+    
+    const url = `/api/seacher?keyword=${keyword}`;   //sending the value to serverless function/backend
     try {
         inputField.value = "";
         mainCard.innerHTML = "";
@@ -23,12 +24,12 @@ async function getData(keyword, API_KEY) {
             console.log(data);
             localStorage.setItem(cacheKey, JSON.stringify(data));   //store the data in the local storage of first time loaded cards
         }
-        
+
 
         if (data.results.length === 0) {                // if data is not available
             mainCard.innerText = "No results found";
         } else {
-            data.results.forEach(movie => {              
+            data.results.forEach(movie => {
                 let cardClone = document.importNode(cardTemplate.content, true);    //creating clone of the template
                 foundCount.innerText = `${data.results.length} found`;
                 cardClone.querySelector('.main__h1').innerText = movie.title;
@@ -68,18 +69,18 @@ async function getData(keyword, API_KEY) {
 inputField.addEventListener("keypress", (e) => {
     if (e.key === "enter" || e.key === "Enter") {
         let value = inputField.value;
-        getData(value, API_KEY);
+        getData(value);
     }
 })
 
 
 searchBtn.addEventListener('click', () => {
     let value = inputField.value;
-    getData(value, API_KEY);
+    getData(value);
 });
 
 // ! callling the function when the webpage is render
-getData('batman', API_KEY);   
+getData('batman');
 
 // theme toggle
 // ——— Theme Toggle ———
