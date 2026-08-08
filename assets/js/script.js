@@ -8,7 +8,7 @@ let cardTemplate = document.querySelector('.main__cardTemplate')
 async function getData(keyword) {
     // const url = `https://api.themoviedb.org/3/search/movie?api_keyYOUR_API_KEY=&query=${encodeURIComponent(keyword)}`;
     
-    const url = `/api/seacher?keyword=${keyword}`;   //sending the value to serverless function/backend
+    const url = `/api/searcher?keyword=${keyword}`;   //sending the value to serverless function/backend
     try {
         inputField.value = "";
         mainCard.innerHTML = "";
