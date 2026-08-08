@@ -340,9 +340,9 @@ footer {
 .lighter-them .header__h1 b {
     color: var(--text-muted);
 }
+
 .light-theme footer {
-    background-color: rgba(0, 0, 0, 0.04);
-    border-top: var(--footer-border);
+    background-color: var(--footer-bg);
 }
 
 .light-theme .footer {
