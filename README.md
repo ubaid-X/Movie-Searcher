@@ -1,12 +1,12 @@
 # 🎬 CineSearch – Movie Discovery Web App
 
-CineSearch is a lightweight, responsive web application that lets users search for movies using The Movie Database (TMDB) API. It displays movie posters, titles, release years, and ratings in a clean card layout. The app also caches search results in the browser's localStorage to reduce API calls and improve performance.
+CineSearch is a lightweight, responsive web application that lets users search for movies using The Movie Database (TMDB) API. It displays movie posters, titles, release years, and ratings in a clean card layout. The app also caches search results in the browser's localStorage to reduce API calls and improve performance, with a secure Node.js serverless backend that keeps the API key hidden from the client.
 
 ---
 
 ## 🔗 Live Demo
 
-> **Live URL:** [https://ubaid-x.github.io/Movie-Searcher/](https://ubaid-x.github.io/Movie-Searcher/)
+> **Live URL:** [https://your-vercel-url-here.vercel.app/](https://your-vercel-url-here.vercel.app/)
 
 ---
 
@@ -17,6 +17,7 @@ CineSearch is a lightweight, responsive web application that lets users search f
 - How to Use
 - Setup & Installation
 - Project Structure
+- Deployment
 - Why This Project Was Made
 - Screenshots
 - About the Author
@@ -37,23 +38,22 @@ CineSearch is a lightweight, responsive web application that lets users search f
 - **Dark/Light Theme Toggle** – Switch between dark and light modes; preference is saved.
 - **Fully Responsive** – Optimized for mobile, tablet, and desktop screens.
 - **Clean UI** – Minimal design with smooth hover effects and accessibility in mind.
+- **Secure** – API key stored server-side, never exposed to the client.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **HTML5** – Semantic structure
-- **CSS3** – Custom properties (variables), Flexbox, CSS Grid, media queries
-- **JavaScript (ES6)** – Fetch API, DOM manipulation, localStorage, async/await
-- **Font Awesome** – Icons for theme toggle and ratings
-- **TMDB API** – Movie database source
+- **Frontend:** HTML5, CSS3 (custom properties, Flexbox, CSS Grid, media queries), Vanilla JavaScript (ES6), Font Awesome
+- **Backend:** Node.js (Serverless function on Vercel)
+- **API:** TMDB (The Movie Database)
 
 ---
 
 ## 📖 How to Use
 
 1. Open the app in your browser.
-2. Type a movie name (e.g., "Inception", "Interstellar") into the search bar.
+2. Type a movie name (e.g., "superman", "Interstellar") into the search bar.
 3. Press Enter or click the **Search** button.
 4. Results will appear as cards showing:
    - Movie poster
@@ -69,46 +69,72 @@ CineSearch is a lightweight, responsive web application that lets users search f
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Edge, Safari)
+- [Node.js](https://nodejs.org/) installed
+- [Vercel CLI](https://vercel.com/docs/cli) installed (`npm i -g vercel`)
 - Internet connection for API calls
 
 ### Steps
 
-1. **Clone or download** this repository:
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/ubaid-X/Movie-Searcher.git
+cd Movie-Searcher
 ```
 
-2. **Navigate to the project folder** and open `index.html` in your browser.
+2. **Install dependencies:**
 
-3. **(Optional) Get your own TMDB API key**:
+```bash
+npm install
+```
+
+3. **Get your TMDB API key**:
    - Visit [TMDB](https://www.themoviedb.org/) and create an account.
    - Go to your account settings and generate an API key.
-   - Replace `API_KEY` in `script.js` with your key.
 
-```js
-let API_KEY = 'your_api_key_here';
+4. **Create a `.env` file** in the root directory:
+
+TMDB_API_KEY=your_api_key_here
+
+> ⚠️ Never commit your `.env` file — it's already included in `.gitignore`.
+
+5. **Run locally with Vercel CLI:**
+
+```bash
+vercel dev
 ```
 
-4. **Run locally** – No build tools or servers required. Just open `index.html`.
+6. Open `http://localhost:3000` in your browser.
 
 ---
 
 ## 📁 Project Structure
-
-```
 Movie-Searcher/
 ├── index.html
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
-│       ├── movie-searcher-favicon.png
-│       └── movie-searcher-preview.png
-└── README.md
-```
+├── package.json
+├── .env # local only – DO NOT COMMIT
+├── .gitignore
+├── api/
+│ └── searcher.js # Serverless function – secures TMDB API key
+└── assets/
+├── css/
+│ └── style.css
+├── js/
+│ └── script.js
+└── images/
+├── movie-searcher-favicon.png
+└── movie-searcher-preview.png
+
+---
+
+## 🚀 Deployment
+
+1. Push your code to GitHub.
+2. Import the project on [Vercel](https://vercel.com/).
+3. Add `TMDB_API_KEY` under Project Settings → Environment Variables.
+4. Deploy.
+
+> **Note:** This project requires a Node.js serverless runtime, so it must be deployed on Vercel (or a similar platform) rather than static hosts like GitHub Pages.
 
 ---
 
@@ -117,12 +143,13 @@ Movie-Searcher/
 This project was built as a practical exercise in:
 
 - Working with REST APIs (TMDB)
+- Securing API keys with a serverless backend
 - Managing state with localStorage
 - Building responsive layouts with CSS Grid and Flexbox
 - Implementing dark/light themes with CSS variables
 - Writing clean, maintainable JavaScript
 
-It also serves as a portfolio piece demonstrating front-end development skills with real-world data integration.
+It also serves as a portfolio piece demonstrating front-end development skills with real-world data integration and secure API handling.
 
 ---
 
