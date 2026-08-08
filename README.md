@@ -6,7 +6,7 @@ CineSearch is a lightweight, responsive web application that lets users search f
 
 ## 🔗 Live Demo
 
-> **Live URL:** [https://your-vercel-url-here.vercel.app/](https://your-vercel-url-here.vercel.app/)
+> **Live URL:** [https://movie-searcher-delta-ten.vercel.app/](https://movie-searcher-delta-ten.vercel.app/)
 
 ---
 
@@ -109,6 +109,7 @@ vercel dev
 ---
 
 ## 📁 Project Structure
+```
 Movie-Searcher/
 ├── index.html
 ├── package.json
@@ -124,7 +125,7 @@ Movie-Searcher/
 └── images/
 ├── movie-searcher-favicon.png
 └── movie-searcher-preview.png
-
+```
 ---
 
 ## 🚀 Deployment

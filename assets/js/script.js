@@ -29,9 +29,9 @@ async function getData(keyword) {
         if (data.results.length === 0) {                // if data is not available
             mainCard.innerText = "No results found";
         } else {
+            foundCount.innerText = `${data.results.length} found`;
             data.results.forEach(movie => {
                 let cardClone = document.importNode(cardTemplate.content, true);    //creating clone of the template
-                foundCount.innerText = `${data.results.length} found`;
                 cardClone.querySelector('.main__h1').innerText = movie.title;
                 cardClone.querySelector('.movieDate').innerText = movie.release_date.split('-')[0] || "N/A";
                 let rating = cardClone.querySelector('.main__cardRating');
